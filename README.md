@@ -1,6 +1,6 @@
 # ATM System | CRUD | JDBC | mySQL Database | 
 
-![](images/.png)
+![](images/ATM-Database-System.jpeg)
 
 This program is a simple ATM system using JDBC (Java Database Connectivity) to interact with a MySQL database.
 
