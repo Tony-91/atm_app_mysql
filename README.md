@@ -10,9 +10,10 @@ If the PIN number is valid and matches an account in the database, the program e
 
 Overall, this program demonstrates basic database connectivity and CRUD (Create, Read, Update, Delete) operations using JDBC and MySQL, as well as basic user input/output using Scanner and standard input/output streams.
 
-## Code & Algorithm Review 
-Some potenital updates after reviewing the code and logic 
-Use prepared statements: Instead of concatenating the PIN number directly into the SQL query, it's recommended to use a prepared statement. This helps prevent SQL injection attacks and improves performance. For example, instead of `String query = "SELECT * FROM new_table where ac_no=" +pin;`, we can use:
+# Code & Algorithm Review 
+Some potenital updates after reviewing the code and logic:
+
+1. Use prepared statements instead of concatenating the PIN number directly into the SQL query, it's recommended to use a prepared statement. This helps prevent SQL injection attacks and improves performance. For example, instead of `String query = "SELECT * FROM new_table where ac_no=" +pin;`, we can use:
 
 ```
 String query = "SELECT * FROM new_table where ac_no=?";
