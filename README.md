@@ -8,10 +8,18 @@ When the program starts, it connects to the "atm" database using the MySQL JDBC 
 
 If the PIN number is valid and matches an account in the database, the program enters a loop that presents the user with several options: check balance, deposit, withdraw, print receipt, or exit. The user's choice is read from standard input using a Scanner object, and then a switch statement executes the corresponding action.
 
-For example, if the user chooses to deposit money, the program prompts them to enter an amount, updates the account balance in the database, and then displays the new balance. Similarly, if the user chooses to withdraw money, the program checks if the withdrawal amount is less than or equal to the account balance, updates the balance in the database, and then displays the new balance.
-
-If the user chooses to exit, the program prints a farewell message and terminates. If the PIN number is invalid, the program simply prints an error message and terminates.
-
 Overall, this program demonstrates basic database connectivity and CRUD (Create, Read, Update, Delete) operations using JDBC and MySQL, as well as basic user input/output using Scanner and standard input/output streams.
+
+## Code & Algorithm Review 
+Some potenital updates after reviewing the code and logic 
+Use prepared statements: Instead of concatenating the PIN number directly into the SQL query, it's recommended to use a prepared statement. This helps prevent SQL injection attacks and improves performance. For example, instead of `String query = "SELECT * FROM new_table where ac_no=" +pin;`, we can use:
+
+```
+String query = "SELECT * FROM new_table where ac_no=?";
+PreparedStatement pstmt = connect.prepareStatement(query);
+pstmt.setInt(1, pin);
+ResultSet rs = pstmt.executeQuery();
+```
+
 
 
