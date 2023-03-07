@@ -47,7 +47,7 @@ switch (Option.values()[choice - 1]) {
 }
 ```
 
-## 3. Close Loose Ends.
+## 3. Tie-up Loose Ends.
 Instead of manually closing the database resources, we should use try-with-resources. This ensures that the resources are properly closed even in case of exceptions or errors. For example:
 ```
 try (Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/atm", "root", "Element1991");
